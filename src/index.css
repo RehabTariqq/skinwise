@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@theme {
+  --color-ivory:#faf6ef; --color-beige:#efe7d8; --color-sage:#6f8260; --color-sage-soft:#e4e9dc;
+  --color-rose:#b27872; --color-rose-soft:#f3e1de; --color-ink:#3a2f2a; --color-line:#e3d9c6;
+  --font-serif:"Iowan Old Style","Palatino Linotype",Georgia,serif;
+}
+body{background:var(--color-ivory);color:var(--color-ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+:focus-visible{outline:2px solid var(--color-sage);outline-offset:2px}
+@layer components{
+ .card{@apply rounded-2xl border border-line bg-white/60 p-5}
+ .btn{@apply inline-flex cursor-pointer items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-ivory hover:bg-ink/85}
+ .btn-ghost{@apply inline-flex cursor-pointer items-center gap-2 rounded-full border border-line px-4 py-2 text-sm hover:bg-beige}
+ .input{@apply w-full rounded-xl border border-line bg-white px-4 py-2.5 text-sm outline-none focus:border-sage}
+ .chip{@apply inline-block rounded-full bg-sage-soft px-3 py-1 text-xs text-sage}
+ .h1{@apply font-serif text-4xl leading-tight tracking-tight md:text-6xl}
+ .h2{@apply font-serif text-2xl leading-snug}
+ .err{@apply mt-1 text-xs text-rose}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
