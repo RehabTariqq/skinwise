@@ -6,7 +6,7 @@ SkinWise is a skincare education app that explains common skin concerns in plain
 
 ## Features
 
-- **Explore concerns:** 15 concerns across acne and pores, skin texture, skin appearance and other concerns, with search and category filters
+- **Explore concerns:** 16 concerns across acne and pores, skin texture, skin appearance and other concerns, with search and category filters
 - **Concern guides:** what it is, common characteristics, possible contributing factors, general approaches, commonly used ingredients, possible irritants and when to see a professional
 - **Ingredient library:** 8 common ingredients with uses, precautions and general usage information
 - **Questionnaire:** rule-based educational suggestions from your answers, with no AI or external services
