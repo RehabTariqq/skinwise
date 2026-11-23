@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @theme {
   --color-ivory:#f5f8f2; --color-beige:#e2eadc; --color-sage:#56704f; --color-sage-soft:#dce8d6;
-  --color-rose:#a3645e; --color-rose-soft:#f1dcd8; --color-ink:#2b2e29; --color-line:#cfdbc8; --color-deep:#2a3a35;
+  --color-rose:#a3645e; --color-rose-soft:#f1dcd8; --color-ink:#2b2e29; --color-line:#cfdbc8; --color-deep:#2a3a35; --color-coral:#e8472f; --color-coral-soft:#ffe1da; --color-sun:#ffc43d; --color-sun-soft:#fff0c4;
   --font-serif:"Iowan Old Style","Palatino Linotype",Georgia,serif;
 }
 body{
@@ -10,7 +10,8 @@ body{
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='60' viewBox='0 0 180 60'%3E%3Cpath d='M0 30 Q22.5 6 45 30 T90 30 T135 30 T180 30' fill='none' stroke='%2356704f' stroke-opacity='.09' stroke-width='1.2'/%3E%3C/svg%3E"),
     radial-gradient(900px 520px at 5% -5%,rgba(86,112,79,.22),transparent 60%),
-    radial-gradient(800px 500px at 100% 25%,rgba(163,100,94,.14),transparent 60%),
+    radial-gradient(800px 500px at 100% 25%,rgba(255,106,77,.15),transparent 60%),
+    radial-gradient(700px 420px at 20% 70%,rgba(255,196,61,.16),transparent 60%),
     radial-gradient(1000px 600px at 50% 115%,rgba(42,58,53,.14),transparent 60%);
   background-attachment:fixed;
 }
@@ -19,14 +20,15 @@ body{
   position:relative;overflow:hidden;
   background:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='36' viewBox='0 0 120 36'%3E%3Cpath d='M0 18 Q15 2 30 18 T60 18 T90 18 T120 18' fill='none' stroke='white' stroke-opacity='.1' stroke-width='1.2'/%3E%3C/svg%3E"),
-    radial-gradient(circle at 88% 12%,rgba(163,100,94,.45),transparent 38%),
+    radial-gradient(circle at 88% 12%,rgba(255,106,77,.55),transparent 38%),
+    radial-gradient(circle at 70% 95%,rgba(255,196,61,.3),transparent 35%),
     radial-gradient(circle at 8% 105%,rgba(130,160,120,.4),transparent 45%),
     var(--color-deep);
   box-shadow:0 24px 50px -28px rgba(42,58,53,.7);
 }
 @layer components{
- .card{@apply rounded-2xl border border-line bg-white/55 p-5 backdrop-blur-[2px] transition duration-200 hover:-translate-y-0.5 hover:border-sage;box-shadow:0 10px 26px -16px rgba(51,41,31,.35)}
- .btn{@apply inline-flex cursor-pointer items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-ivory hover:bg-ink/85}
+ .card{@apply rounded-2xl border border-line bg-white/55 p-5 backdrop-blur-[2px] transition duration-200 hover:-translate-y-0.5 hover:border-coral;box-shadow:0 10px 26px -16px rgba(51,41,31,.35)}
+ .btn{@apply inline-flex cursor-pointer items-center gap-2 rounded-full bg-coral px-5 py-2.5 text-sm font-medium text-white hover:bg-coral/90}
  .btn-ghost{@apply inline-flex cursor-pointer items-center gap-2 rounded-full border border-line bg-white/40 px-4 py-2 text-sm hover:bg-beige}
  .input{@apply w-full rounded-xl border border-line bg-white px-4 py-2.5 text-sm text-ink outline-none focus:border-sage}
  .chip{@apply inline-block rounded-full bg-sage-soft px-3 py-1 text-xs text-sage}
