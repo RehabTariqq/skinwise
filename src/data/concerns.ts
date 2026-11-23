@@ -85,6 +85,12 @@ export const concerns: SkinConcern[] = [
     'Low humidity|Air conditioning or heating|Harsh cleansers|Over-exfoliation|Not enough moisture-binding ingredients',
     'Use hydrating, humectant ingredients|Seal with a moisturizer|Cleanse gently|Pause strong actives temporarily',
     'hyaluronic-acid|glycerin|ceramides', 'Foaming or stripping cleansers|Overusing exfoliants', 'Cheeks|Forehead|All over face', PRO),
+  c('eczema', 'Eczema', 'Other Concerns', 'Eczema (atopic dermatitis) is a common condition that tends to cause dry, itchy, easily irritated skin and often comes and goes in flare-ups. It is diagnosed by a professional, so this guide is general education only.',
+    'Dry, itchy skin|Red, pink or darker patches|Rough or scaly areas|Flare-ups that come and go|Often on cheeks, hands, or in elbow and knee creases',
+    'A skin barrier that loses moisture easily|Family history of eczema, asthma or allergies|Irritants such as harsh soaps or fragrance|Dry air or temperature changes|Stress or poor sleep for some people|Individual triggers, which differ between people',
+    'Moisturize regularly, ideally soon after bathing|Use lukewarm rather than hot water|Choose gentle, fragrance-free cleansers|Note your personal triggers in your journal|Avoid scratching where possible',
+    'ceramides|glycerin|hyaluronic-acid', 'Fragrance and dyes|Hot showers|Harsh soaps or scrubs|Rough or scratchy fabrics|Strong actives such as acids or retinoids on affected skin', 'Cheeks|Around mouth|Body (arms, legs)|Under eyes',
+    'Eczema should be assessed by a doctor or dermatologist, who can confirm what is going on and discuss treatment options. Seek care promptly for skin that is weeping, crusting, very painful or showing signs of infection, or if itching disrupts your sleep.'),
 ];
 export const AREAS = ['Forehead', 'Cheeks', 'Nose', 'Chin', 'Under eyes', 'Around mouth', 'Chest or back', 'Body (arms, legs)', 'All over face'];
 export const CATEGORIES: SkinConcern['category'][] = ['Acne and Pores', 'Skin Texture', 'Skin Appearance', 'Other Concerns'];
