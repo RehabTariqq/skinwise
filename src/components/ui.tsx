@@ -7,11 +7,11 @@ export function Header({ route }: { route: string }) {
   const [open, setOpen] = useState(false);
   const link = (p: string, l: string, cls: string) => (
     <a key={p} href={`#/${p}`} onClick={() => setOpen(false)} aria-current={route === p ? 'page' : undefined}
-      className={`${cls} ${route === p ? 'bg-sage-soft text-sage' : 'hover:bg-beige'}`}>{l}</a>);
+      className={`${cls} ${route === p ? 'bg-sun-soft text-ink' : 'hover:bg-beige'}`}>{l}</a>);
   return (
     <header className="sticky top-0 z-20 border-b border-line bg-ivory/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <a href="#/" className="font-serif text-2xl">Skin<span className="text-rose">Wise</span></a>
+        <a href="#/" className="font-serif text-2xl">Skin<span className="text-coral">Wise</span></a>
         <nav className="hidden gap-1 lg:flex">{NAV.map(([p, l]) => link(p, l, 'rounded-full px-4 py-2 text-sm'))}</nav>
         <button className="cursor-pointer lg:hidden" aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
       </div>
@@ -21,7 +21,7 @@ export function Header({ route }: { route: string }) {
 export function FavBtn({ type, id }: { type: FavType; id: string }) {
   const { isFav, toggleFav } = useStore(); const on = isFav(type, id);
   return <button onClick={() => toggleFav(type, id)} aria-pressed={on} aria-label={on ? 'Remove from favorites' : 'Add to favorites'}
-    className="cursor-pointer rounded-full p-2 text-rose hover:bg-rose-soft"><Heart size={18} fill={on ? 'currentColor' : 'none'} /></button>;
+    className="cursor-pointer rounded-full p-2 text-coral hover:bg-coral-soft"><Heart size={18} fill={on ? 'currentColor' : 'none'} /></button>;
 }
 export const Disclaimer = () => (
   <p className="flex gap-3 rounded-2xl bg-rose-soft p-4 text-sm"><Info className="mt-0.5 shrink-0 text-rose" size={18} />
@@ -29,8 +29,9 @@ export const Disclaimer = () => (
 export const Empty = ({ children }: { children: ReactNode }) => <p className="rounded-2xl border border-dashed border-line p-6 text-center text-sm text-ink/60">{children}</p>;
 export const Page = ({ title, lead, children }: { title: string; lead?: string; children: ReactNode }) => (
   <div className="mx-auto max-w-6xl px-5 py-10"><h1 className="h1">{title}</h1>{lead && <p className="mt-3 max-w-2xl text-lg text-ink/70">{lead}</p>}<div className="mt-8">{children}</div></div>);
+const CAT: Record<string, string> = { 'Acne and Pores': 'bg-coral-soft! text-coral!', 'Skin Appearance': 'bg-sun-soft! text-[#8a5a00]!' };
 export const ConcernCard = ({ c }: { c: SkinConcern }) => (
-  <div className="card flex flex-col gap-2"><div className="flex items-start justify-between"><span className="chip">{c.category}</span><FavBtn type="concern" id={c.id} /></div>
+  <div className="card flex flex-col gap-2"><div className="flex items-start justify-between"><span className={`chip ${CAT[c.category] ?? ''}`}>{c.category}</span><FavBtn type="concern" id={c.id} /></div>
     <a href={`#/concerns/${c.id}`} className="h2 hover:text-sage">{c.name}</a><p className="line-clamp-3 text-sm text-ink/70">{c.description}</p>
     <a href={`#/concerns/${c.id}`} className="mt-auto inline-flex items-center gap-1 pt-2 text-sm text-sage">Read guide <ChevronRight size={14} /></a></div>);
 export const IngredientCard = ({ i }: { i: Ingredient }) => (
