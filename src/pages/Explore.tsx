@@ -13,7 +13,7 @@ export default function Explore({ id }: { id?: string }) {
     <Page title="Explore concerns" lead="Browse common skin concerns and learn what may contribute to them.">
       <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center">
         <div className="relative md:w-80"><Search className="absolute left-4 top-3 text-ink/40" size={18} /><input className="input pl-11" placeholder="Search by name" aria-label="Search concerns" value={q} onChange={e => setQ(e.target.value)} /></div>
-        <div className="flex flex-wrap gap-2">{['All', ...CATEGORIES].map(c => <button key={c} onClick={() => setCat(c)} aria-pressed={cat === c} className={`btn-ghost ${cat === c ? 'bg-sun! border-sun!' : ''}`}>{c}</button>)}</div>
+        <div className="flex flex-wrap gap-2">{['All', ...CATEGORIES].map(c => <button key={c} onClick={() => setCat(c)} aria-pressed={cat === c} className={`btn-ghost ${cat === c ? 'bg-sun! border-sun! text-neutral-900!' : ''}`}>{c}</button>)}</div>
       </div>
       {list.length ? <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{list.map(c => <ConcernCard key={c.id} c={c} />)}</div>
         : <Empty>No concerns match your search. <button className="underline" onClick={() => { setQ(''); setCat('All'); }}>Clear filters</button></Empty>}

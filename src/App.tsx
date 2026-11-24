@@ -14,5 +14,5 @@ export default function App() {
     : a === 'favorites' ? <Favorites /> : a === 'quiz' ? <Quiz /> : a === 'about' ? <About /> : a === 'article' && b ? <Article id={b} /> : <Home />;
   return (
     <StoreProvider><Header route={a === 'quiz' || a === 'article' ? '' : a ?? ''} /><main>{page}</main>
-      <footer className="mt-16 border-t-4 border-sun bg-deep px-5 py-8 text-center text-xs text-ivory/70">SkinWise is for education only and is not medical advice.</footer></StoreProvider>);
+      <footer className="mt-16 border-t-4 border-sun bg-deep px-5 py-8 text-center text-xs text-white/70">SkinWise is for education only and is not medical advice.</footer></StoreProvider>);
 }

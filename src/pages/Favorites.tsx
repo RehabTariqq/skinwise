@@ -12,7 +12,7 @@ const Row = ({ href, label, onRemove }: { href: string; label: string; onRemove:
 export default function Favorites() {
   const [tab, setTab] = useState<'fav' | 'hist'>('fav');
   const s = useStore();
-  const tabBtn = (t: 'fav' | 'hist', l: string) => <button onClick={() => setTab(t)} aria-pressed={tab === t} className={`btn-ghost ${tab === t ? 'bg-sun! border-sun!' : ''}`}>{l}</button>;
+  const tabBtn = (t: 'fav' | 'hist', l: string) => <button onClick={() => setTab(t)} aria-pressed={tab === t} className={`btn-ghost ${tab === t ? 'bg-sun! border-sun! text-neutral-900!' : ''}`}>{l}</button>;
   const fav = (type: 'concern' | 'ingredient' | 'article') => s.favorites.filter(f => f.type === type);
   const group = (title: string, children: React.ReactNode, n: number) => <section className="mb-8"><h2 className="h2 mb-3">{title}</h2>{n ? <div className="grid gap-3 sm:grid-cols-2">{children}</div> : <Empty>Nothing saved here yet.</Empty>}</section>;
   return (

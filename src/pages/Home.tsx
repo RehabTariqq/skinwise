@@ -14,13 +14,13 @@ export default function Home() {
     ...ingredients.filter(i => has(i.name, q)).map(i => ({ href: `#/ingredients/${i.id}`, label: i.name, sub: 'Ingredient' }))] : [];
   return (
     <div className="mx-auto max-w-6xl px-5 py-10">
-      <section className="grid gap-8 hero rounded-3xl text-ivory px-6 py-12 md:px-12 lg:grid-cols-[1.4fr_1fr]">
+      <section className="grid gap-8 hero rounded-3xl px-6 py-12 md:px-12 lg:grid-cols-[1.4fr_1fr]">
         <div>
           <h1 className="h1">Understand your skin before you treat it.</h1>
-          <p className="mt-4 max-w-xl text-lg text-ivory/75">Plain-language guides to common skin concerns, what may contribute to them, and the ingredients people commonly use.</p>
+          <p className="mt-4 max-w-xl text-lg text-white/75">Plain-language guides to common skin concerns, what may contribute to them, and the ingredients people commonly use.</p>
           <div className="relative mt-6 max-w-lg"><Search className="absolute left-4 top-3 text-ink/40" size={18} />
             <input className="input pl-11" placeholder="Search a concern or ingredient" aria-label="Search" value={q} onChange={e => setQ(e.target.value)} />
-            {q.trim() && <ul className="absolute z-10 mt-2 max-h-64 w-full overflow-auto rounded-xl border border-line bg-white text-ink shadow-sm">
+            {q.trim() && <ul className="absolute z-10 mt-2 max-h-64 w-full overflow-auto rounded-xl border border-line bg-surface text-ink shadow-sm">
               {res.length ? res.map(r => <li key={r.href}><a href={r.href} className="flex justify-between px-4 py-2.5 text-sm hover:bg-sage-soft"><span>{r.label}</span><span className="text-ink/50">{r.sub}</span></a></li>)
                 : <li className="px-4 py-3 text-sm text-ink/60">No matches. Try “pimples” or “niacinamide”.</li>}</ul>}</div>
         </div>
